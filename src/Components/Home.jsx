@@ -1,12 +1,13 @@
 import React from "react";
 import HeroSection from "../Pages/Hero";
 import About from "../Pages/About";
-import Service from "../Pages/Service";
 import ChatBot from "../Pages/ChatBot"
 import LatestBlog from "../Pages/LatestBlog";
 import TestimonialCard from "../Pages/Testimonial";
 import CTASection from "../Pages/Cta";
 import Awards from "../Pages/Founder";
+import WhatWeDo from "../Pages/WhatWeDo";
+import ApproachSection from "../Pages/ApproachSection";
 
 const Home = () => {
   return (
@@ -14,7 +15,8 @@ const Home = () => {
       <HeroSection />
       <CTASection />
       <About />
-      <Service />
+      <WhatWeDo />
+      <ApproachSection />
       <Awards />
       <ChatBot />
       <TestimonialCard />

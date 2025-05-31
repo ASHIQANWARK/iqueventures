@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -45,16 +45,26 @@ const testimonials = [
   },
 ];
 
-const TestimonialCard = ({ text, name, designation, rating }) => (
-  <div className="flex-shrink-0 w-80 sm:w-96 bg-white rounded-xl shadow-lg p-6 mx-4 border border-gray-200 relative">
-    <p className="text-gray-800 text-base font-medium mb-6">{text}</p>
-    <div className="absolute bottom-6 right-6 text-[8rem] text-purple-100 opacity-10 pointer-events-none select-none leading-none">
+const TestimonialCard = ({ text, name, designation, rating, isCenter }) => (
+  <div
+    className={`
+      transition-all duration-500 transform
+      ${isCenter ? "scale-100 opacity-100 z-10" : "scale-90 opacity-50"}
+      bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2b]
+      border border-[#1f3a4c] rounded-xl p-6 text-left shadow-md relative
+      text-white
+
+      ${isCenter ? "w-full sm:w-80 md:w-96" : "hidden sm:block w-64 md:w-72"}
+    `}
+  >
+    <p className="text-base font-medium mb-6">{text}</p>
+    <div className="absolute bottom-6 right-6 text-[8rem] text-white opacity-10 pointer-events-none select-none leading-none">
       &rdquo;
     </div>
     <div className="flex items-center justify-between">
       <div>
-        <h4 className="text-sm font-semibold text-gray-900">{name}</h4>
-        <p className="text-xs text-gray-500">{designation}</p>
+        <h4 className="text-sm font-semibold">{name}</h4>
+        <p className="text-xs">{designation}</p>
       </div>
       <div className="flex space-x-1">
         {[...Array(rating)].map((_, i) => (
@@ -73,32 +83,37 @@ const TestimonialCard = ({ text, name, designation, rating }) => (
 );
 
 const Testimonials = () => {
+  const [centerIndex, setCenterIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCenterIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000); // change every 4 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  const getDisplayTestimonials = () => {
+    const prev = (centerIndex - 1 + testimonials.length) % testimonials.length;
+    const next = (centerIndex + 1) % testimonials.length;
+    return [prev, centerIndex, next];
+  };
+
+  const displayIndexes = getDisplayTestimonials();
+
   return (
-    <div className="bg-[#0c3e49] py-10 px-4">
-      <h2 className="text-4xl font-bold text-center text-white mb-12 font-[Open_Sans] uppercase">
+    <div className="bg-black py-12 px-4">
+      <h2 className="text-4xl font-bold text-center text-white mb-12 uppercase font-[Open_Sans]">
         Testimonials
       </h2>
-      <div className="overflow-hidden relative">
-        <div className="animate-slide flex w-max space-x-4">
-          {[...testimonials, ...testimonials].map((t, index) => (
-            <TestimonialCard key={index} {...t} />
-          ))}
-        </div>
+      <div className="flex justify-center items-center space-x-4 max-w-full overflow-x-hidden">
+        {displayIndexes.map((index) => (
+          <TestimonialCard
+            key={index}
+            {...testimonials[index]}
+            isCenter={index === centerIndex}
+          />
+        ))}
       </div>
-
-      {/* Animation Styles */}
-      <style>
-        {`
-          @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-
-          .animate-slide {
-            animation: slide 40s linear infinite;
-          }
-        `}
-      </style>
     </div>
   );
 };

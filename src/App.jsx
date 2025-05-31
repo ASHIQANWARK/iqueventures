@@ -6,7 +6,8 @@ import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import About from "./Pages/About";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Contact from "./Pages/Contact";
 import Career from "./Pages/Career";
 import Blog from "./Pages/Blog";

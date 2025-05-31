@@ -35,7 +35,7 @@ const latestBlogs = sortedBlogs.slice(0, 3);
 
 const LatestBlog = () => {
   return (
-    <div className="w-full bg-[#0c3e49] pt-16 pb-12 px-4 md:px-8 lg:px-16">
+    <div className="w-full bg-[#000000] pt-16 pb-12 px-4 md:px-8 lg:px-16">
       <h2 className="text-3xl font-bold text-center text-white mb-10 font-[Open_Sans] uppercase">
         Latest Blogs <PenTool className="inline-block w-7 h-7 ml-2" />
       </h2>
@@ -44,7 +44,7 @@ const LatestBlog = () => {
         {latestBlogs.map((blog, index) => (
           <div 
             key={index} 
-            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105"
+            className="bg-[#0f1f2b]/70 p-6 md:p-8  border border-teal-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105"
           >
             {/* Blog Image */}
             <img 
@@ -56,10 +56,10 @@ const LatestBlog = () => {
 
             {/* Blog Content */}
             <div className="p-5">
-              <h3 className="text-lg font-semibold text-[#1d375f]">{blog.title}</h3>
-              <p className="text-gray-500 text-sm">{blog.date} | {blog.author}</p>
+              <h3 className="text-lg font-semibold text-[#f6f6f6]">{blog.title}</h3>
+              <p className="text-white text-sm">{blog.date} | {blog.author}</p>
 
-              <Link to="/blog" className="mt-3 inline-block text-[#1d375f] font-semibold hover:underline">
+              <Link to="/blog" className="mt-3 inline-block text-[#f9f9f9] font-semibold hover:underline">
                 Read More →
               </Link>
             </div>

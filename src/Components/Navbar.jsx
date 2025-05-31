@@ -21,23 +21,33 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-20 transition-all duration-300 ${
-        scrolled ? "backdrop-blur bg-black/40 shadow-md" : "bg-transparent"
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? "backdrop-blur bg-black/50 shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img src={logo} alt="Incubenation Logo" className="h-14" />
+        <div className="flex items-center">
+          <img src={logo} alt="Logo" className="h-10" />
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 items-center">
-          <Link to="/" className="text-white hover:text-gray-300">Home</Link>
-          <Link to="/about" className="text-white hover:text-gray-300">About</Link>
-          <Link to="/blogs" className="text-white hover:text-gray-300">Blog</Link>
-          <Link to="/career" className="text-white hover:text-gray-300">Career</Link>
-          <Link to="/contact" className="text-white hover:text-gray-300">Contact</Link>
+        <div className="hidden md:flex items-center space-x-6 bg-black/30 rounded-full px-6 py-2 border border-cyan-500">
+          <Link to="/" className="text-white hover:text-cyan-300">Home</Link>
+            <Link to="/about" className="text-white hover:text-cyan-300">About us</Link>
+          <Link to="/blogs" className="text-white hover:text-cyan-300">Blogs</Link>
+         <Link to="/career" className="text-white hover:text-cyan-300">Careers</Link>
+          <Link to="/contact" className="text-white hover:text-cyan-300">Contact Us</Link>
+        </div>
+
+        {/* Get A Quote Button */}
+        <div className="hidden md:block">
+          <Link
+            to="/quote"
+            className="bg-cyan-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-cyan-300 transition"
+          >
+            Get A Quote
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -50,13 +60,20 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden backdrop-blur-md bg-black/70 text-white">
-          <div className="flex flex-col space-y-2 p-4">
-            <Link onClick={closeMobileMenu} to="/" className="hover:text-gray-300">Home</Link>
-            <Link onClick={closeMobileMenu} to="/about" className="hover:text-gray-300">About</Link>
-            <Link onClick={closeMobileMenu} to="/blogs" className="hover:text-gray-300">Blog</Link>
-            <Link onClick={closeMobileMenu} to="/career" className="hover:text-gray-300">Career</Link>
-            <Link onClick={closeMobileMenu} to="/contact" className="hover:text-gray-300">Contact</Link>
+        <div className="md:hidden backdrop-blur-md bg-black/80 text-white">
+          <div className="flex flex-col space-y-4 p-6">
+            <Link onClick={closeMobileMenu} to="/" className="hover:text-cyan-300">Home</Link>
+            <Link onClick={closeMobileMenu} to="/about" className="hover:text-cyan-300">About</Link>
+            <Link onClick={closeMobileMenu} to="/blogs" className="hover:text-cyan-300"> Blog</Link>
+            <Link onClick={closeMobileMenu} to="/career" className="hover:text-cyan-300">Career</Link>
+            <Link onClick={closeMobileMenu} to="/contact" className="hover:text-cyan-300">Contact</Link>
+            <Link
+              onClick={closeMobileMenu}
+              to="/quote"
+              className="bg-cyan-400 text-black font-semibold px-4 py-2 rounded-full text-center"
+            >
+              Get A Quote
+            </Link>
           </div>
         </div>
       )}

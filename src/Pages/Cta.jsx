@@ -5,7 +5,7 @@ const CTASection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#0c3e49] text-white py-20 px-4 text-center relative overflow-hidden">
+    <section className="bg-[#000000] text-white py-20 px-4 text-center relative overflow-hidden">
       <div className="max-w-2xl mx-auto">
         <p className="text-lg tracking-widest text-purple-300 uppercase mb-2">
           Get in touch
