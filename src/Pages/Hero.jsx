@@ -1,90 +1,123 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import svg from "../assets/images/svg2.svg";
-import team1 from "../assets/images/hero.jpeg";
-import team2 from "../assets/images/startup.jpg";
-import team3 from "../assets/images/sucess.jpeg";
-import team4 from "../assets/images/hero.jpeg";
-import mainImage from "../assets/images/hero.jpeg";
-
-const teamImages = [team1, team2, team3, team4];
+import { motion } from "framer-motion";
+import { PlayCircle } from "lucide-react";
+import mainImage from "../assets/images/Gemini_Generated_Image_h18m8gh18m8gh18m.png";
+import svg2 from "../assets/images/ffflurry.svg"; // Make sure this path is correct
 
 const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-12 py-20"
-      style={{ backgroundImage: `url(${mainImage})` }}
-    >
-      <div className="absolute inset-0 bg-black/30 bg-opacity-70 z-0" />
+    <section className="relative text-white overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 h-[75%] z-0 bg-gradient-to-tl from-[#046c52] via-[#07342a] to-black">
+        <div className="absolute w-full h-full bg-[radial-gradient(circle_at_30%_30%,#00ffcc33_0%,transparent_40%)] opacity-30"></div>
+        <div className="absolute w-full h-full bg-[radial-gradient(circle_at_70%_60%,#ff5e0033_0%,transparent_40%)] opacity-30"></div>
+      </div>
+      <div className="absolute bottom-0 w-full h-[25%] bg-white z-0" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="relative z-10 max-w-4xl w-full text-white bg-[#0e1b24] rounded-2xl p-8 sm:p-10 border border-[#1f2a36] shadow-2xl bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${svg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          fontFamily: "'Poppins', 'Open Sans', sans-serif",
-        }}
-      >
-        <p className="text-sm sm:text-base md:text-2xl tracking-widest text-blue-200 uppercase mb-4 text-center">
-          Welcome to iQue Ventures
-        </p>
-
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-snug text-center mb-6">
-          Building a Better & Private <br />
-          <span className="text-teal-300">Startup Ecosystem for India</span>
-        </h1>
-
-        <div className="flex justify-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate("/contact")}
-            className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg text-base transition-all"
+      {/* Main Content */}
+      <div className="relative z-10 py-20">
+        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+          {/* Left Column */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="lg:w-1/2"
           >
-            Get Started
-          </motion.button>
+            <h2 className="text-2xl sm:text-2xl font-bold mb-6 text-white leading-tight uppercase font-[Open_Sans]">
+              Welcome to<br />
+              <span className="text-[#2effb5] text-7xl">iQue Ventures</span>
+            </h2>
+
+            <p className="text-white text-lg mb-4">
+              Empowering India's startups with strategy, support, and success.
+            </p>
+            <p className="text-white text-base mb-8">
+              We nurture innovative minds and disruptive ideas by providing the resources, network,
+              and mentorship they need to thrive in today's fast-changing world. From ideation to
+              scale-up, we stand by visionary founders at every step.
+            </p>
+
+            <div className="flex gap-4 flex-wrap">
+              <button
+                onClick={() => navigate("/contact")}
+                className="bg-[#2effb5] hover:bg-[#1ad89e] text-black px-6 py-3 rounded-full text-lg font-semibold shadow-lg transition-all"
+              >
+                Get Started
+              </button>
+              <a
+                href="https://youtube.com/shorts/ImUoLEFkAbE?si=S213Q0VTmTedxi1z"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[#2effb5] hover:text-white text-lg font-medium"
+              >
+                <PlayCircle size={24} />
+                Watch Video
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Right Column - Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="lg:w-5/12 w-full"
+          >
+            <motion.img
+              src={mainImage}
+              alt="Innovation at iQue"
+              className="w-full rounded-xl shadow-2xl border-[3px] border-[#2effb566] max-h-[450px] object-fill"
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.4 }}
+            />
+          </motion.div>
         </div>
 
-        {/* Reviews Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-6 mt-10"
-        >
-          <div className="flex -space-x-3">
-            {teamImages.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`Client ${index + 1}`}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white object-cover"
-              />
+        {/* Icon Boxes */}
+        <div className="container mx-auto px-6 mt-20 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: "🚀", title: "Entrepreneurs" },
+              { icon: "💰", title: "Investors" },
+              { icon: "🌱", title: "Startups" },
+              { icon: "🏛️", title: "Govt. & Institutions" },
+            ].map((box, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 * idx }}
+                className="relative bg-gradient-to-br from-[#046c52] via-[#07342a] to-black w-full aspect-square rounded-lg text-center p-6 shadow-md hover:shadow-xl transition-all border border-[#2effb544] flex flex-col justify-center items-center overflow-hidden"
+              >
+                {/* SVG Background */}
+                <img
+                  src={svg2}
+                  alt="Card bg"
+                  className="absolute inset-0 w-full h-full object-cover opacity-10 z-0"
+                />
+                <div className="relative z-10">
+                  <div className="text-4xl mb-3">{box.icon}</div>
+                  <h4 className="text-lg font-semibold text-white">{box.title}</h4>
+                </div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="text-center sm:text-left">
-            <p className="text-sm sm:text-base font-semibold">3K+ Clients</p>
-            <div className="flex justify-center sm:justify-start items-center text-yellow-400 mt-1">
-              {Array.from({ length: 5 }, (_, i) => (
-                <Star key={i} size={16} fill="currentColor" />
-              ))}
-            </div>
-            <p className="text-sm sm:text-base font-medium mt-1">
-              Reviews <span className="font-bold">(4.8 of 5)</span>
-            </p>
+          {/* Learn More Button */}
+          <div className="text-center mt-10">
+            <button
+              onClick={() => navigate("/whatwedo")}
+              className="bg-[#2effb5] text-black border border-[#2effb5] hover:bg-[#2effb5] hover:text-black transition px-6 py-3 rounded-full text-lg font-medium"
+            >
+              Learn More
+            </button>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 };

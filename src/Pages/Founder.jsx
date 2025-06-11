@@ -1,30 +1,17 @@
+import React from "react";
 import { motion } from "framer-motion";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import ceo1 from "../assets/images/art14.jpg";
-import ceo3 from "../assets/images/art15.jpg";
-
-const ceoImages = [ceo1, ceo3];
-
-const sliderSettings = {
-  dots: true,
-  infinite: true,
-  speed: 700,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3500,
-  arrows: false,
-};
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaFacebook,
+  FaLinkedin,
+} from "react-icons/fa";
+import founderImg from "../assets/images/shafi.jpg";
+import bgSvg from "../assets/images/ttten.svg"; // Add your SVG file here
 
 const Awards = () => {
   return (
-    <section
-      className="w-full bg-black flex flex-col items-center justify-center text-white py-16 md:py-24 px-4 sm:px-6 md:px-8 font-[Open_Sans] overflow-x-hidden"
-      style={{ boxSizing: "border-box" }}
-    >
+    <section className="relative w-full bg-gradient-to-tl from-[#046c52] via-[#07342a] to-black flex flex-col items-center justify-center text-white py-16 md:py-24 px-4 sm:px-6 md:px-8 font-[Open_Sans] overflow-hidden">
       {/* Heading */}
       <motion.h2
         className="text-3xl md:text-5xl font-extrabold text-center leading-tight mb-12 font-display uppercase bg-white text-transparent bg-clip-text px-2 max-w-full"
@@ -35,68 +22,55 @@ const Awards = () => {
         What Our Founder Says
       </motion.h2>
 
-      {/* Content */}
-      <div
-        className="w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-center gap-12 md:gap-16"
-        style={{ minWidth: 0 }}
+      {/* SVG Background behind the card */}
+      
+
+      {/* Combined Card */}
+      <motion.div
+        className="relative z-10 w-full max-w-5xl bg-gradient-to-br from-[#046c52] via-[#07342a] to-black border border-teal-800 rounded-xl shadow-xl flex flex-col lg:flex-row items-center gap-8 p-6 md:p-10 backdrop-blur-sm"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
       >
-        {/* Left Side - Quote */}
-        <motion.div
-          className="w-full lg:w-1/2 text-center lg:text-left bg-[#0f1f2b]/70 p-6 md:p-8 rounded-xl border border-teal-800 overflow-hidden max-w-full min-w-0 flex-shrink"
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          style={{ boxSizing: "border-box" }}
-        >
-          <p className="text-white text-base md:text-lg italic leading-relaxed mb-6 break-words">
-            "At iQue Ventures, our mission extends far beyond conventional
-            incubation — it's about unlocking the true potential of visionary
-            thinkers, enabling them to transform bold ideas into impactful
-            realities. We don’t just support startups; we nurture ecosystems
-            where innovation, resilience, and purpose-driven leadership thrive.
-            Startups are more than business ventures — they are powerful engines
-            of societal change, economic growth, and technological evolution.
-            At iQue, we are committed to building an environment that fuels
-            creativity, provides strategic mentorship, and fosters meaningful
-            collaborations — ensuring every founder has the tools and guidance
-            to scale with confidence and integrity."
-          </p>
-
-          <h3 className="text-xl sm:text-2xl font-semibold uppercase mt-6">
-            Shafi Shoukath,
-            <br />
-            <span className="text-teal-300">Founder of iQue Ventures</span>
+        {/* Founder Image & Socials */}
+        <div className="flex flex-col items-center w-full lg:w-1/3 text-center">
+        <img
+        src={bgSvg}
+        alt="decorative shape"
+        className="absolute top-1/2 left-1/2 w-[900px] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none z-0"
+      />
+          <img
+            src={founderImg}
+            alt="Founder"
+            className="rounded-lg w-full h-[300px] object-cover mb-4"
+          />
+          <h3 className="text-lg font-semibold text-white uppercase mb-1">
+            Shafi Shoukath
           </h3>
-        </motion.div>
-
-        {/* Right Side - Carousel */}
-        <motion.div
-          className="w-full lg:w-1/2 flex justify-center max-w-full min-w-0 flex-shrink"
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          style={{ boxSizing: "border-box" }}
-        >
-          <div className="w-[220px] sm:w-[260px] md:w-[300px]">
-            <Slider {...sliderSettings}>
-              {ceoImages.map((image, idx) => (
-                <div key={idx} className="flex justify-center">
-                  <div
-                    className="rounded-xl overflow-hidden shadow-xl w-full h-[260px] sm:h-[320px] md:h-[380px] bg-[#002B1F] p-2 border-2 border-emerald-400"
-                    style={{ maxWidth: "100%", maxHeight: "100%" }}
-                  >
-                    <img
-                      src={image}
-                      alt={`CEO ${idx + 1}`}
-                      className="w-full h-full object-cover rounded-md transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
-                </div>
-              ))}
-            </Slider>
+          <p className="text-sm text-teal-300 mb-3">Founder of iQue Ventures</p>
+          <div className="flex justify-center gap-4 text-2xl text-white">
+            <a href="https://wa.me/919000000000" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp className="hover:text-green-400 transition" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="hover:text-pink-400 transition" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebook className="hover:text-blue-500 transition" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="hover:text-blue-300 transition" />
+            </a>
           </div>
-        </motion.div>
-      </div>
+        </div>
+
+        {/* Quote */}
+        <div className="w-full lg:w-2/3 text-white text-center lg:text-left">
+          <p className="text-base md:text-lg italic leading-relaxed mb-4">
+            "At iQue Ventures, our mission extends far beyond conventional incubation — it's about unlocking the true potential of visionary thinkers, enabling them to transform bold ideas into impactful realities. We don’t just support startups; we nurture ecosystems where innovation, resilience, and purpose-driven leadership thrive. Startups are more than business ventures — they are powerful engines of societal change, economic growth, and technological evolution. At iQue, we are committed to building an environment that fuels creativity, provides strategic mentorship, and fosters meaningful collaborations — ensuring every founder has the tools and guidance to scale with confidence and integrity."
+          </p>
+        </div>
+      </motion.div>
     </section>
   );
 };

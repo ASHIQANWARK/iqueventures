@@ -74,7 +74,7 @@ const SingleBlog = () => {
 
   if (!blog) {
     return (
-      <div className="min-h-screen bg-[#0c3e49] text-white flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-[#046c52] via-[#07342a] to-black text-white flex items-center justify-center">
         <p className="text-xl">Blog not found</p>
       </div>
     );

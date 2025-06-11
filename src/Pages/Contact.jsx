@@ -1,4 +1,28 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
+const infoCards = [
+  {
+    title: "Address",
+    icon: "fas fa-map-marker-alt",
+    text: "Door No: 84, 3rd Cross Rd, KHB Block, Koramangala,Bengaluru, Karnataka 560095",
+  },
+  {
+    title: "Call Us",
+    icon: "fas fa-phone-alt",
+    text: "+91 9061774448",
+  },
+  {
+    title: "Email Us",
+    icon: "fas fa-envelope-open-text",
+    text: "ceo@ique.ventures",
+  },
+  {
+    title: "Open Hours",
+    icon: "fas fa-clock",
+    text: "Mon-Sat: 9.30AM - 6.30PM",
+  },
+];
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,102 +32,100 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const sendWhatsAppMessage = (e) => {
     e.preventDefault();
-    const whatsappMessage = `Name: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0AMessage: ${formData.message}`;
+    const { name, email, subject, message } = formData;
+    const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
     window.open(`https://wa.me/9061774448?text=${whatsappMessage}`, "_blank");
   };
 
   return (
-    <section className="py-16  bg-[#006471] overflow-x-hidden">
-      <div className="container mx-auto px-4 pt-4 max-w-full">
-        <h2 className="text-4xl font-bold text-center mb-4 text-white font-[Open_Sans] uppercase">Contact Us</h2>
-        <p className="text-center text-xl mb-12 text-gray-300 font-[Open_Sans] ">Have questions or need assistance? We are just a message away.</p>
+    <section className="py-16 bg-gradient-to-br from-[#046c52] via-[#07342a] to-black">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-4xl font-bold text-white text-center uppercase mb-4">
+          Contact Us
+        </h2>
+        <p className="text-xl text-gray-300 text-center mb-12">
+          Reach out to us for any assistance or queries.
+        </p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="space-y-8">
-            <div className="flex items-center p-6 rounded-xl shadow-xl bg-white bg-opacity-40 backdrop-blur-md">
-              <div className="text-3xl text-[#006471] mr-4">
-                <i className="fas fa-globe"></i>
-              </div>
-              <div>
-                <h5 className="font-bold text-lg font-[Open_Sans] uppercase">Visit Us</h5>
-                <p className="text-lg font-[Open_Sans] ">www.ique.ventures</p>
-              </div>
-            </div>
-            <div className="flex items-center p-6 rounded-xl shadow-xl bg-white bg-opacity-40 backdrop-blur-md">
-              <div className="text-3xl text-[#006471] mr-4">
-                <i className="fas fa-phone-alt"></i>
-              </div>
-              <div>
-                <h5 className="font-bold text-lg font-[Open_Sans]">Call Us</h5>
-                <p className="text-lg font-[Open_Sans]">+91-9061774448</p>
-              </div>
-            </div>
-            <div className="flex items-center p-6 rounded-xl shadow-xl bg-white bg-opacity-40 backdrop-blur-md">
-              <div className="text-3xl text-[#006471] mr-4">
-                <i className="fas fa-envelope-open-text"></i>
-              </div>
-              <div>
-                <h5 className="font-bold text-lg font-[Open_Sans]">Email Us</h5>
-                <p className="text-lg font-[Open_Sans]">ceo@ique.ventures</p>
-              </div>
-            </div>
+          {/* Left Contact Info */}
+          <div className="space-y-6">
+            {infoCards.map((card, idx) => (
+              <motion.div
+                key={idx}
+                className="flex items-start p-6 rounded-xl shadow-xl bg-white bg-opacity-20 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.2, duration: 0.6 }}
+              >
+                <div className="text-2xl text-[#046c52] mr-4">
+                  <i className={card.icon}></i>
+                </div>
+                <div>
+                  <h5 className="text-[#046c52] font-semibold text-lg">{card.title}</h5>
+                  <p className="text-[#046c52] text-base">{card.text}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
-          <div>
-            <div className="bg-white p-8 rounded-xl shadow-xl bg-opacity-80 backdrop-blur-md">
-              <form onSubmit={sendWhatsAppMessage} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input
-                    type="text"
-                    name="name"
-                    className="border border-gray-300 rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[#006471] transition-all"
-                    placeholder="Your Name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    className="border border-gray-300 rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[#006471] transition-all"
-                    placeholder="Your Email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </div>
+          {/* Right Contact Form */}
+          <motion.div
+            className="bg-white p-8 rounded-xl shadow-2xl"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <form onSubmit={sendWhatsAppMessage} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
-                  type="text"
-                  name="subject"
-                  className="border border-gray-300 rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[#006471] transition-all"
-                  placeholder="Subject"
+                  name="name"
+                  placeholder="Your Name"
+                  className="px-4 py-3 border rounded-lg w-full focus:ring-2 focus:ring-[#046c52]"
                   required
-                  value={formData.subject}
+                  value={formData.name}
                   onChange={handleChange}
                 />
-                <textarea
-                  name="message"
-                  className="border border-gray-300 rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[#006471] transition-all"
-                  rows="4"
-                  placeholder="Your Message"
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Your Email"
+                  className="px-4 py-3 border rounded-lg w-full focus:ring-2 focus:ring-[#046c52]"
                   required
-                  value={formData.message}
+                  value={formData.email}
                   onChange={handleChange}
-                ></textarea>
-                <button
-                  type="submit"
-                  className="w-full py-3 rounded-xl bg-[#006471] text-white text-lg font-semibold hover:bg-[#162d4f] transition-colors font-[Open_Sans]"
-                >
-                  Send via WhatsApp
-                </button>
-              </form>
-            </div>
-          </div>
+                />
+              </div>
+              <input
+                name="subject"
+                placeholder="Subject"
+                className="px-4 py-3 border rounded-lg w-full focus:ring-2 focus:ring-[#046c52]"
+                required
+                value={formData.subject}
+                onChange={handleChange}
+              />
+              <textarea
+                name="message"
+                placeholder="Message"
+                rows="5"
+                className="px-4 py-3 border rounded-lg w-full focus:ring-2 focus:ring-[#046c52]"
+                required
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
+              <button
+                type="submit"
+                className="w-full py-3 bg-[#046c52] hover:bg-[#034336] text-white rounded-lg font-semibold transition-colors"
+              >
+                Send Message via WhatsApp
+              </button>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>

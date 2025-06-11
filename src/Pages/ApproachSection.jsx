@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Lightbulb, BarChart2, Globe2, Users } from "lucide-react";
-import svg from "../assets/images/wwwhirl.svg";
-import svg2 from "../assets/images/ffflurry.svg"
+import svg2 from "../assets/images/svg2.svg";
 
 const ApproachSection = () => {
   const approachItems = [
@@ -29,15 +28,7 @@ const ApproachSection = () => {
   ];
 
   return (
-    <section
-      className="bg-black text-white py-16 px-6 sm:px-10 relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${svg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <section className="text-white py-16 px-6 sm:px-10 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -46,26 +37,22 @@ const ApproachSection = () => {
         className="max-w-6xl mx-auto text-center"
       >
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 flex items-center justify-center gap-2">
-          💡 Our Approach:{" "}
-          <span className="text-teal-400">Project-Driven Solutions</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-[#046c52] uppercase">
+          Our Project-Driven Solutions
         </h2>
-        <p className="text-lg text-gray-300 leading-relaxed mb-12 max-w-2xl mx-auto">
-          We identify gaps, pain points, and inefficiencies in each of the 4 pillars—then{" "}
-          <span className="italic text-white">
-            design real-world projects and scalable models
-          </span>{" "}
-          to solve them.
+        <p className="text-lg text-black leading-relaxed mb-12 max-w-2xl mx-auto">
+          We identify gaps, pain points, and inefficiencies in each of the 4 pillars—then
+          design real-world projects and scalable models to solve them.
         </p>
 
-        {/* 2x2 Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {/* 4x1 Grid on large screens, stack on smaller */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {approachItems.map((item, index) => (
             <div
               key={index}
-              className="relative bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2b] border border-[#1f3a4c] rounded-xl p-6 text-left shadow-md overflow-hidden"
+              className="relative bg-gradient-to-br from-[#046c52] via-[#07342a] to-black border border-[#1f3a4c] rounded-xl p-6 text-left shadow-md aspect-square overflow-hidden flex flex-col items-center justify-center"
             >
-              {/* Card Background SVG */}
+              {/* Background SVG */}
               <img
                 src={svg2}
                 alt="Card Background"
@@ -73,11 +60,11 @@ const ApproachSection = () => {
               />
 
               {/* Card Content */}
-              <div className="relative z-10">
-                <div className="flex items-center justify-center w-12 h-12 bg-[#123748] rounded-full mb-4">
+              <div className="relative z-10 text-center">
+                <div className="flex items-center justify-center w-20 h-20 bg-[#123748] rounded-full mb-4 mx-auto">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-300">{item.text}</p>

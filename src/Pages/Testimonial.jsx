@@ -101,8 +101,8 @@ const Testimonials = () => {
   const displayIndexes = getDisplayTestimonials();
 
   return (
-    <div className="bg-black py-12 px-4">
-      <h2 className="text-4xl font-bold text-center text-white mb-12 uppercase font-[Open_Sans]">
+    <div className=" py-12 px-4">
+      <h2 className="text-4xl font-bold text-center text-[#046c52] mb-12 uppercase font-[Open_Sans]">
         Testimonials
       </h2>
       <div className="flex justify-center items-center space-x-4 max-w-full overflow-x-hidden">

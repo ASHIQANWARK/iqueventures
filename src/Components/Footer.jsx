@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0c3e49] text-white">
+    <footer className="bg-gradient-to-br from-[#046c52] via-[#07342a] to-black text-white">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Logo */}
         <div className="flex justify-center md:justify-start">
@@ -115,7 +115,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="bg-gray-950 py-4 text-center">
+      <div className="bg-[#07342a]py-4 text-center">
         <p className="text-gray-400 text-sm">
           &copy; 2025 Ique Ventures. All rights reserved.
         </p>

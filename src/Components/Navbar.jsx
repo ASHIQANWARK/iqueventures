@@ -32,7 +32,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6 bg-black/30 rounded-full px-6 py-2 border border-cyan-500">
+        <div className="hidden md:flex items-center space-x-6 bg-black/30 rounded-full px-6 py-2 border border-teal-500">
           <Link to="/" className="text-white hover:text-cyan-300">Home</Link>
             <Link to="/about" className="text-white hover:text-cyan-300">About us</Link>
           <Link to="/blogs" className="text-white hover:text-cyan-300">Blogs</Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Link
             to="/quote"
-            className="bg-cyan-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-cyan-300 transition"
+            className="bg-[#2effb5] text-black font-semibold px-6 py-2 rounded-full hover:bg-cyan-300 transition"
           >
             Get A Quote
           </Link>
