@@ -11,6 +11,7 @@ import StatsSection from "../Pages/StatsSection";
 import FaqSection from "../Pages/Faq";
 import Contact from "../Pages/Contact";
 
+
 const Home = () => {
   return (
     <div>
