@@ -41,7 +41,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section id="faq" className="py-16 bg-[#011c17] text-white font-[Open_Sans]">
+    <section id="faq" className="py-16 bg-gradient-to-br from-[#006471] to-black text-white font-[Open_Sans]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row gap-12">
           {/* Left column */}

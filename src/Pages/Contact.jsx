@@ -43,7 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#046c52] via-[#07342a] to-black overflow-x-hidden">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#006471] to-black overflow-x-hidden">
       <div className="max-w-7xl mx-auto w-full">
         <h2 className="text-3xl sm:text-4xl font-bold text-white text-center uppercase mb-4">
           Contact Us

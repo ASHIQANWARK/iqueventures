@@ -10,7 +10,7 @@ import Logo from "../assets/images/iQue-dp-2-white.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-[#046c52] via-[#07342a] to-black text-white pt-16 pb-10">
+    <footer className="bg-gradient-to-br from-[#006471] to-black text-white pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-6">
         {/* Grid Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">

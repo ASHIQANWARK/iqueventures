@@ -44,7 +44,7 @@ const LatestBlog = () => {
         {latestBlogs.map((blog, index) => (
           <div 
             key={index} 
-            className="bg-gradient-to-br from-[#046c52] via-[#07342a] to-black p-6 md:p-8  border border-teal-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-br from-[#006471] to-black p-6 md:p-8  border border-teal-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105"
           >
             {/* Blog Image */}
             <img 

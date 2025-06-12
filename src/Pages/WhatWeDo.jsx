@@ -52,7 +52,7 @@ const WhatWeDo = () => {
   return (
     <section
       id="whatwedo"
-      className="bg-gradient-to-bl from-[#046c52] via-[#07342a] to-black py-20 px-4 md:px-16 text-white"
+      className="bg-gradient-to-bl from-[#006471]  to-black py-20 px-4 md:px-16 text-white"
     >
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold uppercase">

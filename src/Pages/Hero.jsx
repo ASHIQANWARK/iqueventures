@@ -11,7 +11,7 @@ const HeroSection = () => {
   return (
     <section className="relative text-white overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 h-[75%] z-0 bg-gradient-to-tl from-[#046c52] via-[#07342a] to-black">
+      <div className="absolute inset-0 h-[75%] z-0 bg-gradient-to-br from-[#006471]  to-black">
         <div className="absolute w-full h-full bg-[radial-gradient(circle_at_30%_30%,#00ffcc33_0%,transparent_40%)] opacity-30"></div>
         <div className="absolute w-full h-full bg-[radial-gradient(circle_at_70%_60%,#ff5e0033_0%,transparent_40%)] opacity-30"></div>
       </div>
@@ -47,7 +47,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => navigate("/contact")}
-                className="bg-[#2effb5] hover:bg-[#1ad89e] text-black px-6 py-3 rounded-full text-base font-semibold shadow-lg transition-all"
+                className="bg-[#006471] hover:bg-[#1ad89e] text-black px-6 py-3 rounded-full text-base font-semibold shadow-lg transition-all"
               >
                 Get Started
               </button>
@@ -94,7 +94,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 * idx }}
-                className="relative bg-gradient-to-br from-[#046c52] via-[#07342a] to-black w-full aspect-square rounded-lg text-center p-6 shadow-md hover:shadow-xl transition-all border border-[#2effb544] flex flex-col justify-center items-center overflow-hidden"
+                className="relative bg-gradient-to-br from-[#006471]  to-black w-full aspect-square rounded-lg text-center p-6 shadow-md hover:shadow-xl transition-all border border-[#2effb544] flex flex-col justify-center items-center overflow-hidden"
               >
                 <img
                   src={svg2}
