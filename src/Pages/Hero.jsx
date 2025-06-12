@@ -47,7 +47,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => navigate("/contact")}
-                className="bg-[#006471] hover:bg-[#1ad89e] text-black px-6 py-3 rounded-full text-base font-semibold shadow-lg transition-all"
+                className="bg-[#006471] hover:bg-[#2effb5] text-white hover:text-black px-6 py-3 rounded-full text-base font-semibold shadow-lg transition-all"
               >
                 Get Started
               </button>
@@ -55,7 +55,7 @@ const HeroSection = () => {
                 href="https://youtube.com/shorts/ImUoLEFkAbE?si=S213Q0VTmTedxi1z"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[#2effb5] hover:text-white text-base font-medium"
+                className="flex items-center gap-2 text-[#2effb5] hover:text-white text-base font-medium transition"
               >
                 <PlayCircle size={24} />
                 Watch Video
@@ -94,7 +94,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 * idx }}
-                className="relative bg-gradient-to-br from-[#006471]  to-black w-full aspect-square rounded-lg text-center p-6 shadow-md hover:shadow-xl transition-all border border-[#2effb544] flex flex-col justify-center items-center overflow-hidden"
+                className="relative bg-gradient-to-br from-[#006471] to-black w-full aspect-square rounded-lg text-center p-6 shadow-md hover:shadow-[0_0_20px_#2effb5aa] transition-all border border-[#2effb544] flex flex-col justify-center items-center overflow-hidden"
               >
                 <img
                   src={svg2}
@@ -120,7 +120,7 @@ const HeroSection = () => {
                   section.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="bg-[#2effb5] text-black border border-[#2effb5] hover:bg-[#2effb5] hover:text-black transition px-6 py-3 rounded-full text-base font-medium"
+              className="bg-[#2effb5] text-black border border-[#2effb5] hover:bg-white hover:text-[#006471] transition px-6 py-3 rounded-full text-base font-medium"
             >
               Learn More
             </button>
