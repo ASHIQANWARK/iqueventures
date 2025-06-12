@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { PlayCircle } from "lucide-react";
-import mainImage from "../assets/images/Gemini_Generated_Image_h18m8gh18m8gh18m.png";
+import mainImage from "../assets/images/hero4.png";
 import svg2 from "../assets/images/ffflurry.svg"; // Make sure this path is correct
+import { Link } from "react-scroll";
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -28,7 +29,8 @@ const HeroSection = () => {
             className="lg:w-1/2"
           >
             <h2 className="text-2xl sm:text-2xl font-bold mb-6 text-white leading-tight uppercase font-[Open_Sans]">
-              Welcome to<br />
+              Welcome to
+              <br />
               <span className="text-[#2effb5] text-7xl">iQue Ventures</span>
             </h2>
 
@@ -36,9 +38,10 @@ const HeroSection = () => {
               Empowering India's startups with strategy, support, and success.
             </p>
             <p className="text-white text-base mb-8">
-              We nurture innovative minds and disruptive ideas by providing the resources, network,
-              and mentorship they need to thrive in today's fast-changing world. From ideation to
-              scale-up, we stand by visionary founders at every step.
+              We nurture innovative minds and disruptive ideas by providing the
+              resources, network, and mentorship they need to thrive in today's
+              fast-changing world. From ideation to scale-up, we stand by
+              visionary founders at every step.
             </p>
 
             <div className="flex gap-4 flex-wrap">
@@ -101,7 +104,9 @@ const HeroSection = () => {
                 />
                 <div className="relative z-10">
                   <div className="text-4xl mb-3">{box.icon}</div>
-                  <h4 className="text-lg font-semibold text-white">{box.title}</h4>
+                  <h4 className="text-lg font-semibold text-white">
+                    {box.title}
+                  </h4>
                 </div>
               </motion.div>
             ))}
@@ -110,7 +115,12 @@ const HeroSection = () => {
           {/* Learn More Button */}
           <div className="text-center mt-10">
             <button
-              onClick={() => navigate("/whatwedo")}
+              onClick={() => {
+                const section = document.getElementById("whatwedo");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="bg-[#2effb5] text-black border border-[#2effb5] hover:bg-[#2effb5] hover:text-black transition px-6 py-3 rounded-full text-lg font-medium"
             >
               Learn More

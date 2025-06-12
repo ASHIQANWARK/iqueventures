@@ -10,11 +10,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./Pages/Contact";
 import Career from "./Pages/Career";
-import Blog from "./Pages/Blog";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermsAndConditions from "./Pages/TermsandConditions";
 import RefundPolicy from "./Pages/Refundpolicy";
 import Services from "./Pages/Service";
+import Blogs from "./Pages/Blog";
 
 const App = () => {
   return (
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/service" element={<Services />} />
           <Route path="/contact" element={<Contact />}  />
           <Route path="/career" element={<Career/>} />
-          <Route path="/blogs" element={<Blog />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />

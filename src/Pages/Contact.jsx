@@ -43,8 +43,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#046c52] via-[#07342a] to-black">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#046c52] via-[#07342a] to-black overflow-x-hidden">
+      <div className="max-w-7xl mx-auto w-full">
         <h2 className="text-3xl sm:text-4xl font-bold text-white text-center uppercase mb-4">
           Contact Us
         </h2>
@@ -52,13 +52,13 @@ const Contact = () => {
           Reach out to us for any assistance or queries.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
           {/* Left Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             {infoCards.map((card, idx) => (
               <motion.div
                 key={idx}
-                className="flex flex-col sm:flex-row items-start p-6 rounded-xl shadow-xl bg-white bg-opacity-20 backdrop-blur-sm"
+                className="w-full flex flex-col sm:flex-row items-start p-6 rounded-xl shadow-xl bg-white bg-opacity-20 backdrop-blur-sm"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.2, duration: 0.6 }}
@@ -76,17 +76,17 @@ const Contact = () => {
 
           {/* Right Contact Form */}
           <motion.div
-            className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl"
+            className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={sendWhatsAppMessage} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <form onSubmit={sendWhatsAppMessage} className="space-y-6 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full">
                 <input
                   name="name"
                   placeholder="Your Name"
-                  className="px-4 py-3 border rounded-lg w-full focus:ring-2 focus:ring-[#046c52]"
+                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#046c52]"
                   required
                   value={formData.name}
                   onChange={handleChange}
@@ -95,7 +95,7 @@ const Contact = () => {
                   name="email"
                   type="email"
                   placeholder="Your Email"
-                  className="px-4 py-3 border rounded-lg w-full focus:ring-2 focus:ring-[#046c52]"
+                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#046c52]"
                   required
                   value={formData.email}
                   onChange={handleChange}
@@ -104,7 +104,7 @@ const Contact = () => {
               <input
                 name="subject"
                 placeholder="Subject"
-                className="px-4 py-3 border rounded-lg w-full focus:ring-2 focus:ring-[#046c52]"
+                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#046c52]"
                 required
                 value={formData.subject}
                 onChange={handleChange}
@@ -113,7 +113,7 @@ const Contact = () => {
                 name="message"
                 placeholder="Message"
                 rows="5"
-                className="px-4 py-3 border rounded-lg w-full focus:ring-2 focus:ring-[#046c52]"
+                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#046c52]"
                 required
                 value={formData.message}
                 onChange={handleChange}

@@ -49,16 +49,12 @@ const Awards = () => {
           </h3>
           <p className="text-sm text-teal-300 mb-3">Founder of iQue Ventures</p>
           <div className="flex justify-center gap-4 text-2xl text-white">
-            <a href="https://wa.me/919000000000" target="_blank" rel="noopener noreferrer">
-              <FaWhatsapp className="hover:text-green-400 transition" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            
+            <a href="https://www.instagram.com/shafishoukath?igsh=MWM0Nnk5NDRtN2g3bA==" target="_blank" rel="noopener noreferrer">
               <FaInstagram className="hover:text-pink-400 transition" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="hover:text-blue-500 transition" />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            
+            <a href="https://www.linkedin.com/in/shafi-shoukath?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="hover:text-blue-300 transition" />
             </a>
           </div>

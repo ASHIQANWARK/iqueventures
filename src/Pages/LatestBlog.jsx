@@ -35,8 +35,8 @@ const latestBlogs = sortedBlogs.slice(0, 3);
 
 const LatestBlog = () => {
   return (
-    <div className="w-full bg-[#000000] pt-16 pb-12 px-4 md:px-8 lg:px-16">
-      <h2 className="text-3xl font-bold text-center text-white mb-10 font-[Open_Sans] uppercase">
+    <div className="w-full bg-[#ffffff] pt-16 pb-12 px-4 md:px-8 lg:px-16">
+      <h2 className="text-3xl font-bold text-center text-[#046c52] mb-10 font-[Open_Sans] uppercase">
         Latest Blogs <PenTool className="inline-block w-7 h-7 ml-2" />
       </h2>
 
@@ -44,7 +44,7 @@ const LatestBlog = () => {
         {latestBlogs.map((blog, index) => (
           <div 
             key={index} 
-            className="bg-[#0f1f2b]/70 p-6 md:p-8  border border-teal-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-br from-[#046c52] via-[#07342a] to-black p-6 md:p-8  border border-teal-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105"
           >
             {/* Blog Image */}
             <img 

@@ -1,124 +1,92 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
-import Logo from "../assets/images/iQue-dp-2-white.png"; // Adjust the path as needed
-import { Link } from 'react-router-dom';
+import Logo from "../assets/images/iQue-dp-2-white.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-[#046c52] via-[#07342a] to-black text-white">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Column 1: Logo */}
-        <div className="flex justify-center md:justify-start">
-          <img
-            src={Logo}
-            alt="IncubeNation Logo"
-            className="h-50 object-contain"
-          />
-        </div>
-
-        {/* Column 2: Address, Email, Privacy Policy, Terms & Help Centre */}
-        <div className="text-center md:text-left">
-          <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-          <p className="text-gray-300">
-            Address: Door No: 84, 3rd Cross Rd, KHB Block, Koramangala,
-            Bengaluru, Karnataka 560095
-          </p>
-          <p className="text-gray-300 mt-2">
-            Email:{" "}
-            <a
-              href="mailto:ceo@incubenation.com"
-              className="text-[#ffab00] hover:underline"
-            >
-              ceo@ique.ventures
-            </a>
-          </p>
-          <p className="text-gray-300 mt-2 space-x-2">
-            <Link to="/privacypolicy" className="text-[#ffab00] hover:underline">
-              Privacy Policy
+    <footer className="bg-gradient-to-br from-[#046c52] via-[#07342a] to-black text-white pt-16 pb-10">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Grid Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Logo + Description */}
+          <div>
+            <Link to="/" className="flex items-center space-x-2 mb-4">
+              <img src={Logo} alt="IncubeNation Logo" className="h-12 object-contain" />
             </Link>
-            {" | "}
-            <Link to="/termsandconditions" className="text-[#ffa600] hover:underline">
-              Terms & Conditions
-            </Link>
-            {" | "}
-            <Link to="/help-centre" className="text-[#ffab00] hover:underline">
-              Help Centre
-            </Link>
-          </p>
-        </div>
+            <p className="text-sm text-gray-300">
+              Empowering ventures through innovation, incubation, and impactful collaborations.
+            </p>
+            <div className="flex space-x-4 mt-4">
+              
+              <a href="https://www.facebook.com/share/16ZDHdpQ4J/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                <FaFacebookF size={20} />
+              </a>
+              <a href="https://www.instagram.com/ique.ventures?igsh=bWI5eWx0Z2dqajVz" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                <FaInstagram size={20} />
+              </a>
+              <a href="https://www.linkedin.com/company/ique-international/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                <FaLinkedin size={20} />
+              </a>
+            </div>
+          </div>
 
-        {/* Column 3: Social Media */}
-        <div className="flex flex-col items-center mt-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">
-            Follow Us
-          </h3>
-          <div className="flex space-x-6">
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/share/16ZDHdpQ4J/"
-              aria-label="Facebook"
-              className="text-[#1358f9] transition duration-300 hover:scale-110 hover:opacity-80"
-            >
-              <FaFacebookF size={24} />
-            </a>
+          {/* Useful Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Useful Links</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li><Link to="/" className="hover:text-white">Home</Link></li>
+              <li><Link to="/about" className="hover:text-white">About Us</Link></li>
+              <li><Link to="/termsandconditions" className="hover:text-white">Terms of Service</Link></li>
+              <li><Link to="/privacypolicy" className="hover:text-white">Privacy Policy</Link></li>
+              <li><Link to="/refundpolicy" className="hover:text-white">Refund Policy</Link></li>
+            </ul>
+          </div>
 
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/ique.ventures?igsh=bWI5eWx0Z2dqajVz"
-              aria-label="Instagram"
-              className="text-[#e82323] transition duration-300 hover:scale-110 hover:opacity-80"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram size={24} />
-            </a>
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <p className="text-sm text-gray-300">
+              Door No: 84, 3rd Cross Rd,<br />
+              KHB Block, Koramangala,<br />
+              Bengaluru, Karnataka 560095
+            </p>
+            <p className="mt-3 text-sm text-gray-300">
+              <strong>Phone:</strong> +91 9061774448
+            </p>
+            <p className="text-sm text-gray-300">
+              <strong>Email:</strong>{" "}
+              <a href="mailto:ceo@ique.ventures" className="text-[#ffab00] hover:underline">
+                ceo@ique.ventures
+              </a>
+            </p>
+          </div>
 
-            {/* X / WhatsApp */}
-            <a
-              href="#"
-              aria-label="X"
-              className="text-[#2bf00c] transition duration-300 hover:scale-110 hover:opacity-80"
-            >
-              <FaX size={24} />
-            </a>
-
-            {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/company/ique-international/"
-              aria-label="LinkedIn"
-              className="text-[#1358f9] transition duration-300 hover:scale-110 hover:opacity-80"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin size={24} />
-            </a>
+          {/* Google Map (same row) */}
+          <div className="w-full">
+            <iframe
+              title="Google Maps"
+              src="https://www.google.com/maps?q=Koramangala,Bengaluru&output=embed"
+              width="100%"
+              height="180"
+              className="rounded-lg shadow-lg w-full"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
 
-        {/* Column 4: Google Maps Location */}
-        <div className="w-full flex justify-center md:justify-end">
-          <iframe
-            title="Google Maps"
-            src="https://www.google.com/maps?q=Koramangala,Bengaluru&output=embed"
-            width="100%"
-            height="180"
-            className="rounded-lg shadow-lg max-w-md"
-            style={{ border: 0 }}
-            allowFullScreen
-          ></iframe>
+        {/* Copyright */}
+        <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-400 mt-10">
+          <p>&copy; 2025 <strong className="text-white">Ique Ventures</strong>. All rights reserved.</p>
+          <p className="mt-1">Designed by IT Team Ique Ventures</p>
         </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="bg-[#07342a]py-4 text-center">
-        <p className="text-gray-400 text-sm">
-          &copy; 2025 Ique Ventures. All rights reserved.
-        </p>
       </div>
     </footer>
   );
