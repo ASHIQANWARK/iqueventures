@@ -50,7 +50,7 @@ const ApproachSection = () => {
           {approachItems.map((item, index) => (
             <div
               key={index}
-              className="relative bg-gradient-to-br from-[#006471] to-black border border-[#1f3a4c] rounded-xl p-6 text-left shadow-md aspect-square overflow-hidden flex flex-col items-center justify-center"
+              className="relative bg-[#005c6d] border border-[#1f3a4c] rounded-xl p-6 text-left shadow-md aspect-square overflow-hidden flex flex-col items-center justify-center"
             >
               {/* Background SVG */}
               <img

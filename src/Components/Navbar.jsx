@@ -32,22 +32,13 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6 bg-black/30 rounded-full px-6 py-2 border border-teal-500">
+        <div className="hidden md:flex items-center space-x-6 ml-auto">
           <Link to="/" className="text-white hover:text-cyan-300">Home</Link>
           <Link to="/about" className="text-white hover:text-cyan-300">About Us</Link>
+          <Link to="/services" className="text-white hover:text-cyan-300">Services</Link>
           <Link to="/blogs" className="text-white hover:text-cyan-300">Blogs</Link>
           <Link to="/career" className="text-white hover:text-cyan-300">Careers</Link>
-          <Link to="/contact" className="text-white hover:text-cyan-300">Contact Us</Link>
-        </div>
-
-        {/* Desktop CTA Button */}
-        <div className="hidden md:block">
-          <Link
-            to="/contact"
-            className="bg-[#2effb5] text-black font-semibold px-6 py-2 rounded-full hover:bg-cyan-300 transition"
-          >
-            Get A Quote
-          </Link>
+          <Link to="/contact" className="text-white hover:text-cyan-300">Contact</Link>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -64,16 +55,10 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4 p-6">
             <Link onClick={closeMobileMenu} to="/" className="hover:text-cyan-300">Home</Link>
             <Link onClick={closeMobileMenu} to="/about" className="hover:text-cyan-300">About</Link>
+            <Link onClick={closeMobileMenu} to="/services" className="hover:text-cyan-300">Services</Link>
             <Link onClick={closeMobileMenu} to="/blogs" className="hover:text-cyan-300">Blogs</Link>
             <Link onClick={closeMobileMenu} to="/career" className="hover:text-cyan-300">Careers</Link>
-            <Link onClick={closeMobileMenu} to="/contact" className="hover:text-cyan-300">Contact Us</Link>
-            <Link
-              onClick={closeMobileMenu}
-              to="/contact"
-              className="bg-cyan-400 text-black font-semibold px-4 py-2 rounded-full text-center"
-            >
-              Get a Quote
-            </Link>
+            <Link onClick={closeMobileMenu} to="/contact" className="hover:text-cyan-300">Contact</Link>
           </div>
         </div>
       )}

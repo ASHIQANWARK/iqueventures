@@ -50,20 +50,17 @@ const pillars = [
 
 const WhatWeDo = () => {
   return (
-    <section
-      id="whatwedo"
-      className="bg-gradient-to-bl from-[#006471]  to-black py-20 px-4 md:px-16 text-white"
-    >
-      <div className="max-w-7xl mx-auto text-center mb-16">
-        <h2 className="text-4xl font-bold uppercase">
+    <section id="whatwedo" className="bg-white py-12 px-4 md:px-8 text-white">
+      <div className="max-w-7xl mx-auto text-center mb-10">
+        <h2 className="text-3xl md:text-4xl text-[#005c6d] font-bold uppercase">
           What <span className="italic font-light">We Do</span>
         </h2>
-        <p className="text-gray-400 text-sm mt-4 max-w-xl mx-auto italic">
+        <p className="text-[#005c6d] text-sm mt-2 max-w-xl mx-auto italic">
           Solving the Real Problems in the Startup Ecosystem
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
         {pillars.map((pillar) => (
           <PillarCard key={pillar.id} pillar={pillar} />
         ))}
@@ -74,18 +71,17 @@ const WhatWeDo = () => {
 
 const PillarCard = ({ pillar }) => {
   return (
-    <div className="relative border border-emerald-500 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center overflow-hidden min-h-[420px]">
+    <div className="relative bg-[#005c6d] border border-emerald-600 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-4 min-h-[300px]">
       <div
-        className="absolute inset-0 z-0 opacity-10 bg-no-repeat bg-cover bg-center"
+        className="absolute inset-0 opacity-5 bg-cover bg-center pointer-events-none rounded-xl"
         style={{ backgroundImage: `url(${svg2})` }}
-      ></div>
-      <div className="absolute inset-0 z-10" />
-      <div className="relative z-20 py-10 px-6 flex flex-col justify-center items-center h-full">
-        <h3 className="text-3xl font-bold text-white uppercase mb-3">
+      />
+      <div className="relative z-10 text-white">
+        <h3 className="text-xl font-semibold uppercase mb-2 text-emerald-200">
           {pillar.title}
         </h3>
-        <p className="text-gray-300 text-xl mb-4 max-w-xs">{pillar.description}</p>
-        <ul className="list-disc list-inside space-y-1 text-lg text-white text-left max-w-xs mx-auto">
+        <p className="text-sm mb-2">{pillar.description}</p>
+        <ul className="list-disc list-inside space-y-1 text-[14px] text-gray-100">
           {pillar.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

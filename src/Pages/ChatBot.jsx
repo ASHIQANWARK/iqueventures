@@ -47,7 +47,7 @@ const FloatingButtons = () => {
       {/* ScrollUp Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-25 right-8 z-50 bg-[#0c3e49]
+        className={`fixed bottom-25 right-8 z-50 bg-[#005c6d]
           
           
           

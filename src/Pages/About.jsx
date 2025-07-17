@@ -13,7 +13,7 @@ const About = () => {
         className="max-w-6xl mx-auto px-4 mb-10 sm:mb-12 text-center"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#046c52] mb-2 uppercase font-[Open_Sans]">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#005c6d] mb-2 uppercase font-[Open_Sans]">
           About Us
         </h2>
         <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto">

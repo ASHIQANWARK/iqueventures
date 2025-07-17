@@ -14,7 +14,7 @@ const Awards = () => {
     <section className="relative w-full   flex flex-col items-center justify-center text-white py-16 md:py-24 px-4 sm:px-6 md:px-8 font-[Open_Sans] overflow-hidden">
       {/* Heading */}
       <motion.h2
-        className="text-3xl md:text-5xl font-extrabold text-center leading-tight mb-12 font-display uppercase bg-[#006471] text-transparent bg-clip-text px-2 max-w-full"
+        className="text-3xl md:text-5xl font-extrabold text-center leading-tight mb-12 font-display uppercase bg-[#005c6d] text-transparent bg-clip-text px-2 max-w-full"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -27,7 +27,7 @@ const Awards = () => {
 
       {/* Combined Card */}
       <motion.div
-        className="relative z-10 w-full max-w-5xl bg-gradient-to-br from-[#006471] to-black border border-teal-800 rounded-xl shadow-xl flex flex-col lg:flex-row items-center gap-8 p-6 md:p-10 backdrop-blur-sm"
+        className="relative z-10 w-full max-w-5xl bg-[#005c6d] border border-teal-800 rounded-xl shadow-xl flex flex-col lg:flex-row items-center gap-8 p-6 md:p-10 backdrop-blur-sm"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
