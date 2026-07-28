@@ -5,7 +5,6 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
 import Logo from "../assets/images/iQue-dp-2-white.png";
 
 const Footer = () => {
@@ -23,7 +22,6 @@ const Footer = () => {
               Empowering ventures through innovation, incubation, and impactful collaborations.
             </p>
             <div className="flex space-x-4 mt-4">
-              
               <a href="https://www.facebook.com/share/16ZDHdpQ4J/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
                 <FaFacebookF size={20} />
               </a>
@@ -67,17 +65,18 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Google Map (same row) */}
+          {/* Google Map Embed - Fixed */}
           <div className="w-full">
             <iframe
-              title="Google Maps"
-              src="https://www.google.com/maps?q=Koramangala,Bengaluru&output=embed"
+              title="Google Maps - IQUE VENTURES"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.898217583923!2d77.614666!3d12.934166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15f0f0f0f0f1%3A0x2f2f2f2f2f2f2f2f!2sKHB%20Block%2C%20Koramangala%2C%20Bengaluru%2C%20Karnataka%20560095!5e0!3m2!1sen!2sin!4v1610000000000!5m2!1sen!2sin"
               width="100%"
               height="180"
               className="rounded-lg shadow-lg w-full"
               style={{ border: 0 }}
-              allowFullScreen
+              allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

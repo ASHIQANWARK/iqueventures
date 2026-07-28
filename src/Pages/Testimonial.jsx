@@ -2,42 +2,49 @@ import React, { useEffect, useState } from "react";
 
 const testimonials = [
   {
+    id: 1,
     text: "I've seen many organizations claim to support startups, but IQUE Capital lives it. They're a driving force in the innovation space.",
     name: "Sinead Bailey",
     designation: "Volunteer",
     rating: 5,
   },
   {
+    id: 2,
     text: "IQUE Capital's mentorship has truly transformed our startup's trajectory. Their insight and hands-on approach are game-changing.",
     name: "Marcus Liu",
     designation: "Founder, AgriTechX",
     rating: 5,
   },
   {
+    id: 3,
     text: "I appreciate how accessible and supportive the team is. They really care about the entrepreneurs they work with.",
     name: "Rina Patel",
     designation: "Co-Founder, EcoRev",
     rating: 4,
   },
   {
-    text: "The best investment group we’ve worked with. Their support system is strong and effective.",
+    id: 4,
+    text: "The best investment group we've worked with. Their support system is strong and effective.",
     name: "Daniel Gomez",
     designation: "Startup Consultant",
     rating: 5,
   },
   {
+    id: 5,
     text: "They helped us pivot just in time, saving our product and our mission.",
     name: "Fatima Noor",
     designation: "CTO, MedLifeAI",
     rating: 5,
   },
   {
+    id: 6,
     text: "The way IQUE Capital empowers youth startups is phenomenal. They walk the talk.",
     name: "Aarav Mehta",
     designation: "Tech Entrepreneur",
     rating: 5,
   },
   {
+    id: 7,
     text: "Their commitment to innovation is inspiring. Highly recommend for early-stage founders.",
     name: "Linda Osei",
     designation: "Investor & Coach",
@@ -53,7 +60,6 @@ const TestimonialCard = ({ text, name, designation, rating, isCenter }) => (
       bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2b]
       border border-[#1f3a4c] rounded-xl p-6 text-left shadow-md relative
       text-white
-
       ${isCenter ? "w-full sm:w-80 md:w-96" : "hidden sm:block w-64 md:w-72"}
     `}
   >
@@ -69,7 +75,7 @@ const TestimonialCard = ({ text, name, designation, rating, isCenter }) => (
       <div className="flex space-x-1">
         {[...Array(rating)].map((_, i) => (
           <svg
-            key={i}
+            key={`${name}-star-${i}`}
             className="w-4 h-4 text-orange-400"
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -88,7 +94,7 @@ const Testimonials = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCenterIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000); // change every 4 seconds
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -101,14 +107,14 @@ const Testimonials = () => {
   const displayIndexes = getDisplayTestimonials();
 
   return (
-    <div className=" py-12 px-4">
+    <div className="py-12 px-4">
       <h2 className="text-4xl font-bold text-center text-[#046c52] mb-12 uppercase font-[Open_Sans]">
         Testimonials
       </h2>
       <div className="flex justify-center items-center space-x-4 max-w-full overflow-x-hidden">
         {displayIndexes.map((index) => (
           <TestimonialCard
-            key={index}
+            key={testimonials[index].id}
             {...testimonials[index]}
             isCenter={index === centerIndex}
           />

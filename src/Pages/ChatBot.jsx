@@ -3,12 +3,11 @@ import { FaArrowUp, FaWhatsapp, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const FloatingButtons = () => {
-  const [isVisible, setIsVisible] = useState(false); // For ScrollUp button
-  const [isOpen, setIsOpen] = useState(false); // For ChatBot
-  const [messages, setMessages] = useState([]); // For ChatBot messages
-  const chatRef = useRef(null); // For ChatBot outside click detection
+  const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const chatRef = useRef(null);
 
-  // ScrollUp functionality
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 300);
@@ -22,7 +21,6 @@ const FloatingButtons = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // ChatBot functionality
   useEffect(() => {
     if (isOpen) {
       setMessages([]);
@@ -47,11 +45,7 @@ const FloatingButtons = () => {
       {/* ScrollUp Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-25 right-8 z-50 bg-[#005c6d]
-          
-          
-          
-             text-white p-3 rounded-full shadow-md transition-transform duration-300 ${
+        className={`fixed bottom-24 right-8 z-50 bg-[#005c6d] text-white p-3 rounded-full shadow-md transition-transform duration-300 ${
           isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
         } hover:bg-white hover:text-[#1d375f] hover:shadow-lg`}
         style={{ zIndex: 999 }}

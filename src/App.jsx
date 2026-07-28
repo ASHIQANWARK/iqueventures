@@ -14,23 +14,24 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermsAndConditions from "./Pages/TermsandConditions";
 import RefundPolicy from "./Pages/Refundpolicy";
 import Blogs from "./Pages/Blog";
+import BlogPost from "./Pages/BlogPost"; // Create this component
 
 const App = () => {
   return (
     <Router>
       <div className="font-sans text-gray-800">
         <Navbar />
-        {/* Optional: Add Navbar here */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />}  />
-          <Route path="/career" element={<Career/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/career" element={<Career />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
-          </Routes>
+        </Routes>
         <Footer />
       </div>
     </Router>

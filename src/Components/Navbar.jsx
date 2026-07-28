@@ -35,7 +35,6 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-6 ml-auto">
           <Link to="/" className="text-white hover:text-cyan-300">Home</Link>
           <Link to="/about" className="text-white hover:text-cyan-300">About Us</Link>
-          <Link to="/services" className="text-white hover:text-cyan-300">Services</Link>
           <Link to="/blogs" className="text-white hover:text-cyan-300">Blogs</Link>
           <Link to="/career" className="text-white hover:text-cyan-300">Careers</Link>
           <Link to="/contact" className="text-white hover:text-cyan-300">Contact</Link>
@@ -55,7 +54,6 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4 p-6">
             <Link onClick={closeMobileMenu} to="/" className="hover:text-cyan-300">Home</Link>
             <Link onClick={closeMobileMenu} to="/about" className="hover:text-cyan-300">About</Link>
-            <Link onClick={closeMobileMenu} to="/services" className="hover:text-cyan-300">Services</Link>
             <Link onClick={closeMobileMenu} to="/blogs" className="hover:text-cyan-300">Blogs</Link>
             <Link onClick={closeMobileMenu} to="/career" className="hover:text-cyan-300">Careers</Link>
             <Link onClick={closeMobileMenu} to="/contact" className="hover:text-cyan-300">Contact</Link>
