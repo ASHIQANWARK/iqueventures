@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "../Pages/Hero";
 import About from "../Pages/About";
 import ChatBot from "../Pages/ChatBot"
-import LatestBlog from "../Pages/LatestBlog";
+
 import TestimonialCard from "../Pages/Testimonial";
 
 import WhatWeDo from "../Pages/WhatWeDo";
@@ -24,7 +24,7 @@ const Home = () => {
       <ChatBot />
       <TestimonialCard />
       <FaqSection />
-      <LatestBlog />
+     
       <Contact />
     </div>
   );

@@ -48,7 +48,7 @@ const HeroSection = () => {
             <p className="text-base sm:text-lg text-white mb-5">
               "Join us in building a better and more efficient startup ecosystem!
               By fostering collaboration, providing mentorship, and offering
-              resources, we're empowering startups to grow and thrive. Together,
+              resources, we’re empowering startups to grow and thrive. Together,
               we can create a future where innovation knows no limits."
             </p>
 
@@ -100,17 +100,17 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.15 * idx }}
-                className="relative bg-[#005c6d] text-white rounded-lg shadow-lg px-6 py-8 text-center border border-white/20 hover:shadow-[0_0_25px_#2effb5aa] transition w-full max-w-[320px] mx-auto"
+                className="relative bg-[#005c6d] text-white rounded-lg shadow-lg px-6 py-8 text-center border border-white/20 hover:shadow-[0_0_25px_#2effb5aa] transition w-[80%] h-[380px] mx-auto"
               >
                 <img
                   src={svg2}
                   alt="bg"
                   className="absolute inset-0 w-full h-full object-cover opacity-10 z-0"
                 />
-                <div className="relative z-10 flex flex-col items-center justify-center">
+                <div className="relative z-10 flex flex-col items-center justify-center h-full">
                   <div className="mb-4 text-[#2effb5]">{item.icon}</div>
-                  <h4 className="text-lg font-bold leading-snug mb-4">{item.title}</h4>
-                  <button className="bg-[#2effb5] hover:bg-green-300 text-black text-sm font-semibold px-4 py-2 rounded-full shadow-sm transition">
+                  <h4 className="text-lg font-bold leading-snug">{item.title}</h4>
+                  <button className="mt-6 bg-[#2effb5] hover:bg-green-300 text-black text-sm font-semibold px-4 py-2 rounded-full shadow-sm transition">
                     Learn More..
                   </button>
                 </div>
