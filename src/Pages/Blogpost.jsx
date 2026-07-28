@@ -59,7 +59,6 @@ const BlogPost = () => {
         </div>
       </div>
 
-      {/* Styles */}
       <style>{`
         .blog-post-page {
           background: #0b1f24;
