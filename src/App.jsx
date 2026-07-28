@@ -14,7 +14,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermsAndConditions from "./Pages/TermsandConditions";
 import RefundPolicy from "./Pages/Refundpolicy";
 import Blogs from "./Pages/Blog";
-
+import BlogPost from "./Pages/Blogpost"; // Make sure this file exists
 
 const App = () => {
   return (
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/career" element={<Career />} />
           <Route path="/blogs" element={<Blogs />} />
- 
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
