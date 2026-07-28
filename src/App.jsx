@@ -14,7 +14,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermsAndConditions from "./Pages/TermsandConditions";
 import RefundPolicy from "./Pages/Refundpolicy";
 import Blogs from "./Pages/Blog";
-import BlogPost from "./Pages/Blogpost"; // Make sure this file exists
+import BlogPost from "./Pages/BlogPost"; // Make sure this file exists
 
 const App = () => {
   return (
