@@ -4,7 +4,7 @@ import About from "../Pages/About";
 import ChatBot from "../Pages/ChatBot"
 import LatestBlog from "../Pages/LatestBlog";
 import TestimonialCard from "../Pages/Testimonial";
-import Awards from "../Pages/Founder";
+
 import WhatWeDo from "../Pages/WhatWeDo";
 import ApproachSection from "../Pages/ApproachSection";
 import StatsSection from "../Pages/StatsSection";
@@ -20,7 +20,7 @@ const Home = () => {
       <StatsSection />
       <WhatWeDo />
       <ApproachSection />
-      <Awards />
+
       <ChatBot />
       <TestimonialCard />
       <FaqSection />
