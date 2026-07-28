@@ -14,7 +14,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermsAndConditions from "./Pages/TermsandConditions";
 import RefundPolicy from "./Pages/Refundpolicy";
 import Blogs from "./Pages/Blog";
-import BlogPost from "./Pages/BlogPost"; // Now imported
+import BlogPost from "./Pages/Blogpost" // Now imported
 
 const App = () => {
   return (
