@@ -14,7 +14,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermsAndConditions from "./Pages/TermsandConditions";
 import RefundPolicy from "./Pages/Refundpolicy";
 import BlogPage from "./Pages/Blog";
-import BlogPost from "./Pages/BlogPost";
+import BlogPost from "./Pages/Blogpost";
 
 // Wrapper component to use hooks
 const AppContent = () => {
