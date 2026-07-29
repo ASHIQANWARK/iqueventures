@@ -1,8 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { BLOGS } from "../data/blogData";
 
-const Blog = () => {
+const Blog = ({ navigateTo, onPostClick, showBlogPost }) => {
+  // Handle blog row click
+  const handleRowClick = (index) => {
+    if (onPostClick) {
+      onPostClick(index);
+    }
+  };
+
   return (
     <div className="blog-page-wrapper">
       {/* Hero Section */}
@@ -18,10 +24,11 @@ const Blog = () => {
       <div className="blog-grid-container">
         <div className="blog-grid">
           {BLOGS.map((blog, index) => (
-            <Link 
-              to={`/blog/${blog.slug}`} 
+            <div 
               key={blog.id} 
               className="blog-row"
+              onClick={() => handleRowClick(index)}
+              style={{ cursor: 'pointer' }}
             >
               <div className="blog-row-number">
                 <span className="blog-row-num">{String(index + 1).padStart(2, '0')}</span>
@@ -38,7 +45,7 @@ const Blog = () => {
                 <span className="blog-row-date">{blog.date}</span>
                 <span className="blog-row-cta">Read →</span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

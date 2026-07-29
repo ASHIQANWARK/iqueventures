@@ -1,5 +1,5 @@
-import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
 // Page components
 import Home from "./Components/Home";
@@ -13,27 +13,87 @@ import Career from "./Pages/Career";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermsAndConditions from "./Pages/TermsandConditions";
 import RefundPolicy from "./Pages/Refundpolicy";
-import Blogs from "./Pages/Blog";
-import BlogPost from "./Pages/BlogPost"; // Make sure this file exists
+import BlogPage from "./Pages/Blog";
+import BlogPost from "./Pages/BlogPost";
+
+// Wrapper component to use hooks
+const AppContent = () => {
+  const navigate = useNavigate();
+  const [showBlogPost, setShowBlogPost] = useState(false);
+  const [selectedBlogIndex, setSelectedBlogIndex] = useState(0);
+
+  // Navigation function using React Router
+  const navigateTo = (path) => {
+    navigate(path);
+  };
+
+  // Handle blog post click from BlogPage
+  const handleBlogPostClick = (index) => {
+    setSelectedBlogIndex(index);
+    setShowBlogPost(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Handle back to blog list
+  const handleBackToBlogs = () => {
+    setShowBlogPost(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <div className="font-sans text-gray-800">
+      <Navbar />
+      <Routes>
+        {/* Home Route */}
+        <Route path="/" element={<Home />} />
+        
+        {/* About Route */}
+        <Route path="/about" element={<About />} />
+        
+        {/* Contact Route */}
+        <Route path="/contact" element={<Contact />} />
+        
+        {/* Career Route */}
+        <Route path="/career" element={<Career />} />
+        
+        {/* Blog Routes - Insights */}
+        <Route 
+          path="/blogs" 
+          element={
+            showBlogPost ? (
+              <BlogPost 
+                index={selectedBlogIndex} 
+                navigateTo={navigateTo} 
+                onBack={handleBackToBlogs}
+              />
+            ) : (
+              <BlogPage 
+                navigateTo={navigateTo} 
+                onPostClick={handleBlogPostClick}
+                showBlogPost={showBlogPost}
+              />
+            )
+          } 
+        />
+        
+        {/* Privacy Policy Route */}
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        
+        {/* Terms & Conditions Route */}
+        <Route path="/termsandconditions" element={<TermsAndConditions />} />
+        
+        {/* Refund Policy Route */}
+        <Route path="/refundpolicy" element={<RefundPolicy />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
+};
 
 const App = () => {
   return (
     <Router>
-      <div className="font-sans text-gray-800">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="/termsandconditions" element={<TermsAndConditions />} />
-          <Route path="/refundpolicy" element={<RefundPolicy />} />
-        </Routes>
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   );
 };

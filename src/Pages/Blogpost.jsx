@@ -1,16 +1,18 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
 import { BLOGS } from "../data/blogData";
 
-const BlogPost = () => {
-  const { slug } = useParams();
-  const blog = BLOGS.find((b) => b.slug === slug);
+const BlogPost = ({ index, navigateTo, onBack }) => {
+  // Get the blog data based on index
+  const blog = BLOGS[index];
 
+  // If no blog found, show not found message
   if (!blog) {
     return (
       <div className="blog-post-not-found">
         <h2>Post not found</h2>
-        <Link to="/blogs">← Back to Insights</Link>
+        <button onClick={onBack} className="blog-back-btn">
+          ← Back to Insights
+        </button>
       </div>
     );
   }
@@ -35,7 +37,9 @@ const BlogPost = () => {
 
       {/* Body */}
       <div className="blog-post-body">
-        <Link to="/blogs" className="blog-back">← Back to Insights</Link>
+        <button onClick={onBack} className="blog-back">
+          ← Back to Insights
+        </button>
         
         {/* Featured Image */}
         <div className="blog-post-image">
@@ -54,7 +58,12 @@ const BlogPost = () => {
             <p className="blog-post-cta-text">
               Connect with India's most promising startups and turn your vision into reality.
             </p>
-            <Link to="/contact" className="blog-post-cta-btn">Get Started →</Link>
+            <button 
+              onClick={() => navigateTo('/contact')} 
+              className="blog-post-cta-btn"
+            >
+              Get Started →
+            </button>
           </div>
         </div>
       </div>
@@ -83,9 +92,20 @@ const BlogPost = () => {
           margin-bottom: 20px;
         }
 
-        .blog-post-not-found a {
+        .blog-post-not-found .blog-back-btn {
           color: #7dd3fc;
           text-decoration: none;
+          background: transparent;
+          border: none;
+          font-size: 1rem;
+          cursor: pointer;
+          padding: 10px 20px;
+          transition: all 0.3s ease;
+        }
+
+        .blog-post-not-found .blog-back-btn:hover {
+          color: #ffffff;
+          transform: translateX(-4px);
         }
 
         .blog-post-header {
@@ -147,7 +167,8 @@ const BlogPost = () => {
         }
 
         .blog-back {
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
           color: #7dd3fc;
           cursor: pointer;
           margin-bottom: 40px;
@@ -155,6 +176,9 @@ const BlogPost = () => {
           transition: all 0.3s ease;
           padding: 8px 0;
           text-decoration: none;
+          background: transparent;
+          border: none;
+          font-family: inherit;
         }
 
         .blog-back:hover {
@@ -261,6 +285,7 @@ const BlogPost = () => {
           cursor: pointer;
           transition: all 0.3s ease;
           text-decoration: none;
+          font-family: inherit;
         }
 
         .blog-post-cta-btn:hover {
