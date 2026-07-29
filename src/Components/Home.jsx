@@ -25,7 +25,7 @@ const Home = () => {
       <TestimonialCard />
       <FaqSection />
      
-      <Contact />
+   
     </div>
   );
 };
